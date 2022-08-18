@@ -44,7 +44,7 @@ class SheypoorSpider(scrapy.Spider):
         for case in response.css('#serp .list'):
             edit = changenumber(case.css('.to-bottom').get())
             price = Price(edit)
-            if price[0]*100/3 + price[1] <= 650000000 and price[0] + price[1]>200000000:
+            if price[0]*100/3 + price[1] <= 1000000000 and price[0] + price[1]>200000000:
 
                 yield {
                     'title': case.css('a::text').getall()[-1],
